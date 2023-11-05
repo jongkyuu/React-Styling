@@ -2,13 +2,15 @@ import React from 'react';
 import './Button.scss';
 import classNames from 'classnames';
 
-function Button({ children, size, color, outline, fullWidth }) {
+function Button({ children, size, color, outline, fullWidth, ...rest }) {
   return (
-    <div className={classNames('Button', size, color, { outline, fullWidth })}>
+    <div
+      className={classNames('Button', size, color, { outline, fullWidth })}
+      {...rest}
+    >
       {children}
     </div>
   );
-  //   return <div className={['Button', size].join(' ')}>{children}</div>;
 }
 
 Button.defaultProps = {

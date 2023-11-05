@@ -1,16 +1,27 @@
 import './App.scss';
+import React from 'react';
 import Button from './components/Button';
 
 function App() {
+  const [coordinates, setCoordinates] = React.useState([]);
+
+  const onMouseMove = (e) => {
+    const x = e.pageX;
+    const y = e.pageY;
+    setCoordinates([x, y]);
+  };
+
   return (
     <div className="App">
       <div className="buttons">
-        <Button size="large">BUTTON</Button>
+        <Button size="large" onClick={() => console.log('클릭됐다!')}>
+          BUTTON
+        </Button>
         <Button>BUTTON</Button>
         <Button size="small">BUTTON</Button>
       </div>
       <div className="buttons">
-        <Button size="large" color="gray">
+        <Button size="large" color="gray" onMouseMove={onMouseMove}>
           BUTTON
         </Button>
         <Button color="gray">BUTTON</Button>
@@ -49,6 +60,8 @@ function App() {
           BUTTON
         </Button>
       </div>
+
+      <div className="coordinates">{coordinates.join(', ')}</div>
     </div>
   );
 }
