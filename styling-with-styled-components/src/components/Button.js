@@ -94,6 +94,7 @@ const StyledButton = styled.button`
     & + & {
         margin-left: 1rem;
     }
+
     ${colorStyles}
     ${sizeStyles}
 
