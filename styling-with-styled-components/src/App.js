@@ -39,6 +39,7 @@ const ButtonGroup = styled.div`
 function App() {
     const [dialog, setDialog] = useState(false);
     const onClick = () => {
+        console.log("삭제");
         setDialog(true);
     };
 
@@ -51,6 +52,8 @@ function App() {
         console.log("취소");
         setDialog(false);
     };
+
+    console.log("APP 랜더링");
 
     return (
         <ThemeProvider theme={{ palette }}>
